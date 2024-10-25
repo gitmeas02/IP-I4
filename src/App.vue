@@ -10,10 +10,8 @@
     <div class="C">
       <Category/>
       <Promotion/>
+      <Products/>
     </div>
-    
- 
-    <Products/>
   </header>
   <!-- <RouterView /> -->
 </template>

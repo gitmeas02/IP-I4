@@ -1,0 +1,97 @@
+<template>
+  <div>
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+      <span v-if="breadcrumb.length">
+        <a v-for="(crumb, index) in breadcrumb" :key="index" href="#" class="breadcrumb-item" @click.prevent="navigateTo(crumb)">
+          {{ crumb }}
+          <span v-if="index < breadcrumb.length - 1"> > </span>
+        </a>
+      </span>
+    </nav>
+    
+    <!-- Content Section -->
+    <div id="content">
+      <!-- Home Section -->
+      <div v-if="currentView === 'home'" class="home-section">
+        <h2>Home Section</h2>
+        <p>Click on a product to view more:</p>
+        <button v-for="product in products" :key="product" class="product-link" @click="showProduct(product)">
+          {{ product }}
+        </button>
+      </div>
+
+      <!-- Product Section -->
+      <div v-if="currentView === 'product'" class="product-section">
+        <h2>{{ selectedProduct }}</h2>
+        <p>Details about the selected product will go here.</p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      // Initial breadcrumb and current view
+      breadcrumb: ['Home'],
+      currentView: 'home',
+      selectedProduct: '',
+      products: ['Product 1', 'Product 2'] // Sample products
+    };
+  },
+  methods: {
+    showProduct(productName) {
+      // Update the breadcrumb and view
+      this.breadcrumb = ['Home', productName];
+      this.selectedProduct = productName;
+      this.currentView = 'product';
+    },
+    navigateTo(crumb) {
+      // Navigate based on the breadcrumb clicked
+      if (crumb === 'Home') {
+        this.breadcrumb = ['Home'];
+        this.currentView = 'home';
+      }
+    }
+  }
+};
+</script>
+
+<style scoped>
+body {
+  font-family: Arial, sans-serif;
+}
+
+.breadcrumb {
+  margin: 20px;
+}
+
+.breadcrumb-item {
+  text-decoration: none;
+  color: grey;
+  margin: 0 5px;
+}
+
+.breadcrumb-item:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#content {
+  margin: 20px;
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: lightblue;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: deepskyblue;
+}
+</style>

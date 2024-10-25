@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Breadcrumb Navigation</title>
+ <style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+.breadcrumb {
+  margin: 20px;
+}
+
+.breadcrumb-item {
+  text-decoration: none;
+  color: grey;
+  margin: 0 5px;
+}
+
+.breadcrumb-item:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#content {
+  margin: 20px;
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: lightblue;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: deepskyblue;
+}
+
+ </style>
+</head>
+<body>
+
+  <nav class="breadcrumb" id="breadcrumb">
+    <a href="#" class="breadcrumb-item" data-section="home">Home</a>
+  </nav>
+  
+  <div id="content">
+    <div class="home-section">
+      <h2>Home Section</h2>
+      <p>Click on a product to view more:</p>
+      <button class="product-link" data-product="Product 1">Product 1</button>
+      <button class="product-link" data-product="Product 2">Product 2</button>
+    </div>
+
+    <div class="product-section" style="display:none;">
+      <h2 id="product-title"></h2>
+      <p>Details about the selected product will go here.</p>
+    </div>
+  </div>
+
+  <script >
+    // Get the breadcrumb element and product buttons
+const breadcrumb = document.getElementById('breadcrumb');
+const productLinks = document.querySelectorAll('.product-link');
+const productSection = document.querySelector('.product-section');
+const homeSection = document.querySelector('.home-section');
+
+// Add event listeners to each product button
+productLinks.forEach(product => {
+  product.addEventListener('click', function() {
+    const productName = this.getAttribute('data-product'); // Get product name
+    showProduct(productName);
+  });
+});
+
+// Function to display the product and update the breadcrumb
+function showProduct(productName) {
+  // Update the breadcrumb with product name
+  breadcrumb.innerHTML = `<a href="#" class="breadcrumb-item" data-section="home">Home</a> > <a href="#" class="breadcrumb-item" data-section="product">${productName}</a>`;
+  
+  // Show the product section and hide the home section
+  homeSection.style.display = 'none';
+  productSection.style.display = 'block';
+  document.getElementById('product-title').textContent = productName;
+  
+  // Add event listener to go back to home
+  document.querySelector('[data-section="home"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    showHome();
+  });
+}
+
+// Function to show the Home section
+function showHome() {
+  // Update the breadcrumb to only show Home
+  breadcrumb.innerHTML = `<a href="#" class="breadcrumb-item" data-section="home">Home</a>`;
+  // Show the home section and hide the product section
+  homeSection.style.display = 'block';
+  productSection.style.display = 'none';
+}
+</script>
+</body>
+</html>

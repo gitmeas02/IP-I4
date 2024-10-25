@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            
+        }
+        label {
+            width: 200px;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .star-rate {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        div {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+
+        .price span {
+            margin-right: 5px;
+        }
+
+        .price span:last-child {
+            margin-right: 0;
+        }
+
+        .select-number {
+            width: 40px;
+            height: 24px;
+        }
+
+        .number-input {
+            position: relative;
+            width: 100px;
+            /* Adjust width as needed */
+        }
+
+        .number-input {
+            position: relative;
+            width: 100px;
+            /* Adjust width as needed */
+        }
+
+        .select-number {
+            width: 65px;
+            height: 27px;
+            font-size: 14px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+            position: relative;
+            color:rgb(95, 201, 95);
+        }
+    
+        .select-number::-webkit-inner-spin-button,
+        .select-number::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+
+        .select-number:focus {
+            border-color: rgb(102, 236, 189);
+            outline: none;
+        }
+
+        .select-number {
+            border-color: rgb(70, 229, 173);
+            padding-left: 7px;
+        }
+
+        .down,
+        .up {
+            width: 7px;
+            cursor: pointer;
+            padding-right: 5px;
+        }
+
+        .arrows {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .input-number {
+            position: relative;
+            background-color: rgb(41, 119, 188);
+            border-radius: 10px;
+            border: 1px;
+        }
+
+        .arrows {
+            position: absolute;
+            right: 4px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+        }
+        .card{
+            border: 1px solid rgb(40, 227, 215);
+            width:220px;
+            border-radius: 10px;
+        }
+        .discount{
+            width:40px;
+            height:23.4px;
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1px 30px 30px 1px;
+            position: relative;
+            top: 14px;
+        }
+        .number-discount{
+            position: absolute;
+            font-size: 12.5px;
+        }
+        .container-img{
+            padding-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .food{
+            width:120px;
+            height: 120px;
+        }
+    
+        .choose{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 10px;
+            padding-bottom: 14px;
+            padding-right: 10px;
+        }
+        .title-rate-price{
+            padding-left: 10px;
+        }
+        .discount-price{
+            text-decoration:line-through gray;
+            font-size: 14px;
+        }
+        .container-products{
+            display: flex;
+            gap: 10px;
+            width: fit-content;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container-products">
+        <div class="card">
+            <p class="discount"><span class="number-discount">-17%</span></p>
+        <div class="container-img">
+            <img src="./assets/ProductSVG/mango.svg" alt="" class="food">
+        </div>
+    
+        <div class="title-rate-price">
+            <label  class="title">
+                <span class="foodname">Hoodo food</span> 
+                <span class="decription">Seeds of Change Organic Quinoa, Brown, & Red Rice</span>
+            </label>
+        <div class="star-rate">
+            <div class="stars">
+                <img src="./assets/ProductSVG/start.svg" alt="">
+                <img src="./assets/ProductSVG/start.svg" alt="">
+                <img src="./assets/ProductSVG/start.svg" alt="">
+                <img src="./assets/ProductSVG/start.svg" alt="">
+            </div>
+            <p class="rate">(<span>4.0</span>)</p>
+        </div>
+        <p class="gram"><span class="number-gram">500</span> gram</p>
+        </div>
+      <div class="choose">
+        <p class="price">
+            <span>$2.52</span>
+            <span class="discount-price">2.00</span>
+        </p>
+        <div class="input-number">
+            <input type="number" id="number" class="select-number" />
+            <div class="arrows">
+                <img src="./assets/svg/upArrow.svg" alt="" class="up">
+                <img src="./assets/svg/downArrow.svg" alt="" class="down">
+            </div>
+        </div>
+      </div>
+        </div>
+        <div class="card">
+            <p class="discount"><span class="number-discount">-17%</span></p>
+        <div class="container-img">
+            <img src="./assets/ProductSVG/mango.svg" alt="" class="food">
+        </div>
+    
+        <div class="title-rate-price">
+            <label class="title"><span>Hoodo food</span>Seeds of Change Organic Quinoa, Brown, & Red Rice</label>
+        <div class="star-rate">
+            <div class="stars">
+                <img src="./assets/ProductSVG/start.svg" alt="">
+                <img src="./assets/ProductSVG/start.svg" alt="">
+                <img src="./assets/ProductSVG/start.svg" alt="">
+                <img src="./assets/ProductSVG/start.svg" alt="">
+            </div>
+            <p>(<span>4.0</span>)</p>
+        </div>
+        <p><span>500</span> gram</p>
+        </div>
+      <div class="choose">
+        <p class="price">
+            <span>$2.52</span>
+            <span class="discount-price">2.00</span>
+        </p>
+        <div class="input-number">
+            <input type="number" id="number" class="select-number" />
+            <div class="arrows">
+                <img src="./assets/svg/upArrow.svg" alt="" class="up">
+                <img src="./assets/svg/downArrow.svg" alt="" class="down">
+            </div>
+        </div>
+      </div>
+        </div>
+    </div>
+</body>
+
+</html>

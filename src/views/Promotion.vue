@@ -1,5 +1,6 @@
 <template>
-    <div class="main">
+<div class="P-con">
+  <div class="main">
       <CardPromotion
         v-for="promotion in promotions"
         :key="promotion.id"
@@ -9,6 +10,7 @@
         :backgroundColor="promotion.backgroundColor"
       />
     </div>
+</div>
   </template>
     <script>
     import { ref} from 'vue';
@@ -17,9 +19,9 @@
         components: {CardPromotion},
         setup(){
      const promotions=ref([
-    {id:1,description: 'Make your Breakfast Healthy and Easy',button: 'Shop Now',image:'./src/assets/images/BattleStrawberry.png', backgroundColor:'#F3E8E8'},
-    {id:2,description: 'Everyday Fresh & Clean with Our Products',button: 'Shop Now',image:'./src/assets/images/Onion.png',backgroundColor:'#F0E8D5'},
-    {id:3,description: 'The best Organic Products Online',button: 'Shop Now',image:'./src/assets/images/Vegetables.png',backgroundColor:'#E7EAF3'},
+    {id:1,description: 'Make your Breakfast Healthy and Easy',button: 'Shop Now',image:'./src/assets/images/BattleStrawberry.svg', backgroundColor:'#F3E8E8'},
+    {id:2,description: 'Everyday Fresh & Clean with Our Products',button: 'Shop Now',image:'./src/assets/images/Onion.svg',backgroundColor:'#F0E8D5'},
+    {id:3,description: 'The best Organic Products Online',button: 'Shop Now',image:'./src/assets/images/Vegetables2.svg',backgroundColor:'#E7EAF3'},
         ]);
         return {promotions};
             },
@@ -37,6 +39,12 @@
          width: auto;
          flex-wrap: wrap;
          gap: 12px;
+         padding-top: 20px;
+         padding:20px;
+         justify-content: start;
      }
-     /*  */
+     .P-con{
+      display: flex;
+      justify-content: center;
+     }
     </style>

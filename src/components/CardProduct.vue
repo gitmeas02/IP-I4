@@ -1,53 +1,67 @@
 <template>
-      <div class="card">
-            <p class="discount"><span class="number-discount">-17%</span></p>
-            <div class="container-img">
-                <img src="../assets/ProductSVG/mango.svg" alt="" class="foods">
-            </div>
-            <div class="title-rate-price">
-                <label for="" class="title">
-                    <span class="foodname">Hot pot</span>
-                    <span class="description">Seeds of Change Organic Quinoa, Brown, & Red Rice</span>
-                </label>
-                <div class="star-rate">
-                    <div class="stars">
-                        <img src="../assets/ProductSVG/start.svg" alt="">
-                        <img src="../assets/ProductSVG/start.svg" alt="">
-                        <img src="../assets/ProductSVG/start.svg" alt="">
-                        <img src="../assets/ProductSVG/start.svg" alt="">
-                    </div>
-                    <p class="rate">(<span>4.0</span>)</p>
-                </div>
-                <p class="gram">
-                     <span class="number-gram">500</span>
-                    <span class="namegram">gram</span>
-                </p>
-            </div>
-            <div class="choose">
-                <p class="price">
-                    <span class="after-discount-price">$3.5</span>
-                    <span class="discount-price">2.00</span>
-                </p>
-                <div class="input-number">
-                    <input type="number" id="number" class="select-number">
-                    <div class="arrows">
-                        <img src="../assets/svg/upArrow.svg" alt="" class="up">
-                        <img src="../assets/svg/downArrow.svg" alt="" class="down">
-                    </div>
-                </div>
-            </div>
+  <div class="card">
+    <p class="discount"><span class="number-discount">-{{ discountPercent }}%</span></p>
+    <div class="container-img">
+      <img :src="image" alt="" class="foods">
+    </div>
+    <div class="title-rate-price">
+      <label for="" class="title">
+        <span class="foodname">{{ name }}</span>
+        <span class="description">{{ description }}</span>
+      </label>
+      <div class="star-rate">
+        <div class="stars">
+          <img src="../assets/ProductSVG/start.svg" alt="">
+          <img src="../assets/ProductSVG/start.svg" alt="">
+          <img src="../assets/ProductSVG/start.svg" alt="">
+          <img src="../assets/ProductSVG/start.svg" alt="">
+          <img src="../assets/ProductSVG/nocolorStar.svg" alt="">
         </div>
+        <p class="rate">(<span>{{ rateNumber }}</span>)</p>
+      </div>
+      <p class="gram">
+        <span class="number-gram">{{ gramNumber }}</span>
+        <span class="namegram">gram</span>
+      </p>
+    </div>
+    <div class="choose">
+      <p class="price">
+        <span class="after-discount-price">${{ price }}</span>
+        <span class="discount-price">{{ discountPrice }}</span>
+      </p>
+      <div class="input-number">
+        <input type="number" id="number" class="select-number">
+        <div class="arrows">
+          <img src="../assets/svg/upArrow.svg" alt="" class="up">
+          <img src="../assets/svg/downArrow.svg" alt="" class="down">
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
-<script>
 
+<script>
+export default {
+  props: {
+    discountPercent: Number,
+    image: String,
+    name: String,
+    description: String,
+    rateNumber: Number,
+    gramNumber: Number,
+    price: Number,
+    discountPrice: Number,
+  }
+};
 </script>
+
 <style>
-.container-product{
+/* .container-product{
                 display: flex;
                 width: auto;
                 gap: 10px;
                 flex-wrap: wrap;
-}
+} */
 .discount{
     display: flex;
     width:40px;
@@ -65,7 +79,7 @@
 }
         .card{
             border: 1px solid rgb(40, 227, 215);
-            width:220px;
+            width:190px;
             border-radius: 10px;
         }
         .stars img{
@@ -73,11 +87,18 @@
          height: 12px;
         }
         .container-img{
-            width:220px;
             display: flex;
             justify-content: center;
             padding-top: 10px;
             padding-bottom: 10px;
+            width:180px;
+        }
+        .container-img img{
+            width:140px;
+            height: 140px;
+        }
+        p{
+            margin: 0;
         }
        .title .foodname{
             font-size: 12px;

@@ -51,10 +51,8 @@ export default {
     align-items: center;
    }
    body{
-    body {
   margin: 0;
   padding: 0;}
-   }
    p{
     padding: 0;
   margin: 0;

@@ -1,6 +1,7 @@
 <template>
+<div class="C-category">
   <div class="container">
-    <CardCategory
+      <CardCategory
       v-for="category in categories"
       :key="category.id"
       :fruitName="category.fruitName"
@@ -8,6 +9,7 @@
       :image="category.image"
     />
   </div>
+</div>
 </template>
 
 <script>
@@ -15,7 +17,8 @@ import { ref } from 'vue';
 import CardCategory from '../components/CardCategory.vue';
 
  export default {
-  components: { CardCategory },
+  components: { CardCategory},
+
   setup() {
     const categories = ref([
       { id: 1, fruitName: 'Peach', items: 14, image: './src/assets/svg/Peach.svg' },
@@ -28,17 +31,24 @@ import CardCategory from '../components/CardCategory.vue';
       { id: 8, fruitName: 'Orange', items: 13, image: './src/assets/svg/Orange.svg' },
       { id: 9, fruitName: 'Hamburger', items: 23, image: './src/assets/svg/Hamburger.svg' },
       { id: 10, fruitName: 'Kiwi', items: 13, image: './src/assets/svg/Kiwi.svg' },
-      { id: 11, fruitName: 'Kiwi', items: 13, image: './src/assets/svg/Kiwi.svg' },
     ]);
     return { categories };
   },
 };
 </script>
 <style>
-.container{
+.container {
   display: flex;
   flex-wrap: wrap;
-  gap:12px;
+  gap: 12px;
+  justify-content:start; /* Center items on larger screens by default */
+  align-items: center;
+  padding: 20px;
 }
+.C-category{
+  display: flex;
+  justify-content: center;
+}
+
 </style>
 <!-- My file card name CardCategory and big file that contain Card name Category.vue -->

@@ -7,35 +7,25 @@
         <RouterLink to="/products">Products</RouterLink>
       </nav>
     </div> -->
-    <div class="C">
-      <Category/>
-      <Promotion/>
-      <Products/>
-    </div>
+        <HeaderBar/>
+        <Category/>
+        <Promotion/>
+        <HeaderBar
+        title="Popular Product"
+        paddingTop="10px"
+        paddingBottom="0px"/>
+        <Products/>
   </header>
   <!-- <RouterView /> -->
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
-import Category from './views/Category.vue';
-import Promotion from './views/Promotion.vue';
 import Products from './views/Products.vue';
+import Category from './views/Category.vue';
+import HeaderBar from './views/HeaderBar.vue';
+import Promotion from './views/Promotion.vue';
+
 </script>
 
 <style scoped>
-.C{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-/* .wrapper {
-  padding: 20px;
-  background-color: #f8f9fa;
-}
-  
-nav {
-  display: flex;
-  gap: 10px;
-} */
 </style>

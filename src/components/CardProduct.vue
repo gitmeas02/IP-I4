@@ -79,8 +79,9 @@ export default {
 }
         .card{
             border: 1px solid rgb(40, 227, 215);
-            width:190px;
+            width:170px;
             border-radius: 10px;
+            overflow:hidden;
         }
         .stars img{
          width: 12px;
@@ -187,27 +188,32 @@ export default {
         }
 
         .input-number {
+          height: fit-content;
             position: relative;
-            background-color: rgb(41, 119, 188);
             border-radius: 10px;
             border: 1px;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(56, 187, 143);
+            width: fit-content;
         }
         .discount-price{
             text-decoration:line-through gray;
             font-size: 16px;
-
+            padding-left: 10px;
         }
         .after-discount-price{
                 font-size: 18px;
         }
-        .price{
+        p .price{
+            height: auto;
             display: flex;
             gap:10px;
             flex-direction: row;
             justify-content: center;
-            align-content: center;
-            padding-top: 13px;
+            align-items: center;
             padding-bottom: 0;
+            
         }
         .arrows {
             position: absolute;
@@ -219,15 +225,24 @@ export default {
             justify-content: center;
             gap: 2px;
         }
-        .choose{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-left: 10px;
-            padding-bottom: 14px;
-            padding-right: 10px;
-        }
         .title-rate-price{
         padding-left: 10px;
         }
+       .choose{
+        margin-top: 2px;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom:4px ;
+       }
+       .description {
+  font-size: 12px;
+  color: #666;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px; /* Adjust the max-width as needed */
+}
 </style>

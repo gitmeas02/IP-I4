@@ -21,7 +21,7 @@ export default {
    .fruits{
     border: 1px solid;
     display: flex;
-    width: 120px;
+    width: 102px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -30,8 +30,8 @@ export default {
   padding: 0;
   margin: 0;
   gap: 0;
-  width: 120px;
-  height: 120px;
+  width: 98px;
+  height: 98px;
    }
    .container{
     margin: 10px;

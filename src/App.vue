@@ -10,10 +10,12 @@
         <HeaderBar/>
         <Category/>
         <Promotion/>
+
         <HeaderBar
         title="Popular Product"
         paddingTop="10px"
         paddingBottom="0px"/>
+     
         <Products/>
   </header>
   <!-- <RouterView /> -->

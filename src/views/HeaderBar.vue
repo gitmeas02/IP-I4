@@ -48,10 +48,11 @@ export default {
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   padding-left: 100px;
   padding-right: 100px;
   align-content: center;
+  gap:300px;
 }
 
 ul {

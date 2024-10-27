@@ -22,8 +22,8 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 .cardPromotion{
-    width:430px;
-    height: 300px;
+    width:380px;
+    height: 280px;
     position: relative;
     border-radius: 10px;
 }
@@ -63,28 +63,5 @@ label{
          gap: 10px;
          cursor: pointer;
      }
-  /* Media query for screen sizes 923px and below */
-@media (max-width: 923px) {
-    .cardPromotion {
-        width: 100%;
-        height: 300px;
-        margin: 0;
-    }
-
-    img {
-        width: 440px;
-         height: 200px;
-         position: absolute;
-         right: 0;
-         bottom: 0;
-         border-radius: 10px;
-    }
-
-    .contents {
-        position: relative; 
-        left: 0; 
-        bottom: auto;
-        padding: 80px;
-}
-}
+  
 </style>
